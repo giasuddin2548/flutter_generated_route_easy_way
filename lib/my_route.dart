@@ -5,6 +5,10 @@ import 'package:flutter_generated_route/pages/login_screen.dart';
 import 'package:flutter_generated_route/pages/reg_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
+const String homeRoute ='/';
+const String loginRoute ='/login_screen';
+const String regRoute ='/reg_screen';
+
 class MyRoute{
   static Route<dynamic> generatedRoute(RouteSettings routeSettings){
     switch (routeSettings.name){
@@ -24,20 +28,13 @@ class MyRoute{
   }
 
   static Route<dynamic> _materialRoute(Widget view) {
+    // return MaterialPageRoute(builder: (_) => view);
     return PageTransition(
         child: view,
-        type: PageTransitionType.bottomToTop,
+        type: PageTransitionType.leftToRight,
         duration: const Duration(milliseconds: 300),
         reverseDuration: const Duration(milliseconds: 300),
 
     );
   }
 }
-
-
-
-
-
-const String homeRoute ='/';
-const String loginRoute ='/login_screen';
-const String regRoute ='/reg_screen';
